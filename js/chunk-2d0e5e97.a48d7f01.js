@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e5e97"],{9703:function(e,t,c){"use strict";c.r(t);var n=c("7a23"),o=Object(n["createTextVNode"])(" 404 错误, 您所查看的页面不存在, "),r=Object(n["createTextVNode"])("点击前往购物车");function u(e,t){var c=Object(n["resolveComponent"])("router-link");return Object(n["openBlock"])(),Object(n["createBlock"])("h1",null,[o,Object(n["createVNode"])(c,{to:"/products"},{default:Object(n["withCtx"])((function(){return[r]})),_:1})])}const a={};a.render=u;t["default"]=a}}]);
+//# sourceMappingURL=chunk-2d0e5e97.a48d7f01.js.map

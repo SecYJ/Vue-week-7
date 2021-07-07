@@ -1,0 +1,64 @@
+<script>
+export default {
+	emits: ["switchPage"],
+	props: {
+		pages: {
+			type: Object,
+			required: true,
+		},
+	},
+	methods: {
+		changePage(page) {
+			this.$emit("switchPage", page);
+		},
+		prePage() {
+			const { current_page } = this.pages;
+			this.$emit("switchPage", current_page - 1);
+		},
+		nextPage() {
+			const { current_page } = this.pages;
+			this.$emit("switchPage", current_page + 1);
+		},
+	},
+};
+</script>
+
+<template>
+	<nav aria-label="Page navigation example">
+		<ul class="pagination">
+			<li class="page-item" :class="{ disabled: !pages['has_pre'] }">
+				<a
+					class="page-link"
+					href="#"
+					aria-label="Previous"
+					@click.prevent="prePage"
+				>
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			<li
+				class="page-item"
+				v-for="page in pages['total_pages']"
+				:key="page"
+				:class="{ active: pages['current_page'] === page }"
+			>
+				<a
+					class="page-link"
+					href="#"
+					@click.prevent="changePage(page)"
+					>{{ page }}</a
+				>
+			</li>
+			<li class="page-item" :class="{ disabled: !pages['has_next'] }">
+				<a
+					class="page-link"
+					href="#"
+					aria-label="Next"
+					@click.prevent="nextPage"
+				>
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</template>
